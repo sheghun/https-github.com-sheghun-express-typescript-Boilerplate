@@ -1,0 +1,43 @@
+{
+  "name": "network-market",
+  "version": "1.0.0",
+  "description": "A network-marketing platform",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "jest --forceExit --coverage --verbose",
+    "build": "npm run build-ts && npm run tslint && npm run copy-static-assets",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
+    "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\" \npm run serve-debug\"",
+    "watch-node": "nodemon dist/entry.js",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "watch-ts": "tsc -w",
+    "build-ts": "tsc",
+    "serve-debug": "nodemon --inspect dist/entry.js",
+    "copy-static-assets": "ts-node copyStaticAssets.js"
+  },
+  "author": "Oladiran Segun Solomon <sheghunoladiran9@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/dotenv": "^6.1.0",
+    "@types/express": "^4.16.1",
+    "@types/jest": "^24.0.9",
+    "@types/node": "^11.10.5",
+    "@types/shelljs": "^0.8.3",
+    "concurrently": "^4.1.0",
+    "jasmine-await": "^0.0.3",
+    "jasmine-ts": "^0.3.0",
+    "jest": "^24.3.1",
+    "jest-cli": "^24.3.1",
+    "nodemon": "^1.18.10",
+    "shelljs": "^0.8.3",
+    "ts-jest": "^24.0.0",
+    "ts-node": "^8.0.3",
+    "tslint": "^5.13.1"
+  },
+  "dependencies": {
+    "dotenv": "^6.2.0",
+    "esm": "^3.2.13",
+    "express": "^4.16.4",
+    "typescript": "^3.3.3333"
+  }
+}
