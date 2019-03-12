@@ -2,7 +2,7 @@
 An updated typescript boilerplate for nodejs with express
 
 ## Usage
-Clone the respository
+Clone the respository navigate into the respository using your terminal type `yarn install` to install all depedencies.
 
 Package.json scripts
 
