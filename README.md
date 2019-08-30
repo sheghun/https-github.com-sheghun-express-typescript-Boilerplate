@@ -1,8 +1,10 @@
 # https-github.com-sheghun-express-typescript-Boilerplate
-An updated typescript boilerplate for nodejs with express
+
+An updated typescript boilerplate for nodejs with express, majorly for building apis
 
 ## Usage
-Clone the respository navigate into the respository using your terminal type `yarn install` to install all depedencies.
+
+Clone the repository navigate into the repository using your terminal type `yarn install` to install all dependencies.
 
 Package.json scripts
 
