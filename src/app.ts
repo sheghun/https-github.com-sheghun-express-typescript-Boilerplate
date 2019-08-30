@@ -26,7 +26,7 @@ app.use(cookieParser());
 app.use(cors(corsOptions()));
 
 app.get('/', (req, res) => {
-  res.send('Thanks');
+  res.json({status: true, body: 'Hi the server works..'});
 });
 
 // Use the errorhandler when not in the production environment
