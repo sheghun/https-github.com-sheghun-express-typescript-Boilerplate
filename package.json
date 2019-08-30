@@ -2,19 +2,19 @@
 	"name": "myragpblog",
 	"version": "1.0.0",
 	"description": "Myragpblog Backend Application",
-	"main": "server.js",
+	"main": "dist/server.js",
 	"scripts": {
 		"test": "jest --forceExit --coverage --verbose",
 		"build": "npm run build-ts && npm run eslint && npm run create-npm-lock-file && npm run copy-static-assets",
 		"watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
 		"watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\"",
 		"watch-node": "NODE_ENV=development nodemon dist/server.js",
-		"eslint": "tslint -c tslint.json -p tsconfig.json",
+		"eslint": "eslint -c .eslintrc.js \"**/*.ts\" --ignore-pattern node_modules",
 		"create-npm-lock-file": "synp -f -s yarn.lock",
 		"watch-ts": "tsc -w",
 		"build-ts": "tsc",
 		"serve-debug": "NODE_ENV=development nodemon --inspect dist/server.js",
-		"copy-static-assets": "ts-node copyStaticAssets.js"
+		"copy-static-assets": "ts-node copyStaticAssets.ts"
 	},
 	"author": "Oladiran Segun Solomon <sheghunoladiran9@gmail.com>",
 	"license": "ISC",
