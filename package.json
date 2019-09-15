@@ -5,7 +5,7 @@
 	"main": "dist/server.js",
 	"scripts": {
 		"test": "jest --forceExit --coverage --verbose",
-		"build": "npm run build-ts && npm run eslint && npm run create-npm-lock-file && npm run copy-static-assets",
+		"build": "yarn run build-ts && yarn run eslint && yarn run create-npm-lock-file && yarn run copy-static-assets",
 		"watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
 		"watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\"",
 		"watch-node": "NODE_ENV=development nodemon dist/server.js",
@@ -48,8 +48,7 @@
 		"prettier": "^1.18.2",
 		"shelljs": "^0.8.3",
 		"ts-jest": "^24.0.2",
-		"ts-node": "^8.3.0",
-		"tslint": "^5.19.0"
+		"ts-node": "^8.3.0"
 	},
 	"dependencies": {
 		"bcrypt": "^3.0.6",
@@ -69,7 +68,6 @@
 		"nodemailer": "^6.3.0",
 		"sequelize": "^5.17.2",
 		"sequelize-cli": "^5.5.0",
-		"tslint-config-airbnb": "^5.11.1",
 		"typescript": "^3.6.2"
 	}
 }
