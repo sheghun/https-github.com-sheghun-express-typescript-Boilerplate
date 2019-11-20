@@ -12,4 +12,3 @@ server.listen(process.env.PORT || 8080, () => {
     console.log('Press CTRL-C to stop\n');
 });
 exports.default = server;
-//# sourceMappingURL=server.js.map

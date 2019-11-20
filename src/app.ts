@@ -1,8 +1,16 @@
-import express from 'express';
+import express, {Errback, NextFunction} from 'express';
 import bodyParser from 'body-parser';
 import errorHandler from 'errorhandler';
 import cookieParser from 'cookie-parser';
 import cors, {CorsOptions} from 'cors';
+import dotenv from 'dotenv';
+import * as path from 'path';
+import logger from './shared/logger';
+import baseRoutes from './routes';
+
+const router = express.Router();
+
+dotenv.config({path: path.join(`${__dirname}/../.env`)});
 
 const app = express();
 
@@ -26,7 +34,15 @@ app.use(cookieParser());
 app.use(cors(corsOptions()));
 
 app.get('/', (req, res) => {
-  res.json({status: true, body: 'Hi the server works..'});
+  return res.json({status: true, body: 'Hi the server works..'});
+});
+
+app.use('/', baseRoutes);
+
+// Log all errors
+app.use((err: Errback, req, res, next: NextFunction) => {
+  logger.error(err);
+  next(err);
 });
 
 // Use the errorhandler when not in the production environment
