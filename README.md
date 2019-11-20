@@ -17,3 +17,5 @@ Run `yarn watch` to build, compile and run the application while watching for ch
 Run `yarn watch-debug` to build, compile and run the application while watching for changes in debug mode.
 
 Run `yarn copy-static-assets` to copy your public folder containing your static assets to the dist folder after making changes to your static files.
+
+See somethings you can improve on? why not create a pull request I'll be glad you did.
